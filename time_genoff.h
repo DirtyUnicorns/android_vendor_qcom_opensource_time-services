@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2010-2013, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2010-2014, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -66,6 +66,8 @@ typedef enum time_unit {
 typedef enum time_genoff_opr {
 	T_SET,
 	T_GET,
+	T_DISABLE,
+	T_ENABLE,
 	T_MAX
 } time_genoff_opr_type;
 
@@ -84,5 +86,8 @@ typedef struct time_genoff_info {
 
 /* API to be called for time get/set operation */
 int time_genoff_operation(time_genoff_info_type *pargs);
+
+/* API to be called for logging operations */
+int time_control_operations(time_genoff_info_type *pargs);
 
 #endif /* __TIME_GENOFF_H__ */
